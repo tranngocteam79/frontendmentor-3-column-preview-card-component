@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca:wght@300;400&display=swap");
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lexend Deca", sans-serif;
+  margin: 0;
+}
+
+:root {
+  --bright-orange: hsl(31, 77%, 52%);
+  --dark-cyan: hsl(184, 100%, 22%);
+  --dark-cyan-2x: hsl(179, 100%, 13%);
+  --transparent-white: hsla(0, 0%, 100%, 0.75);
+  --light-gray-2x: hsl(0, 0%, 95%);
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.card {
+  max-width: 280px;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.card > div {
+  height: 320px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 640px) {
+  .card {
+    display: flex;
+    width: 80%;
+    min-width: 680px;
+    max-width: 800px;
+  }
+  .card > div {
+    height: 380px;
+    flex-basis: 0 0 0;
+  }
+}
+
+.card__sedans {
+  background: var(--bright-orange);
+  border-radius: 10px 10px 0 0;
+}
+
+.card__suvs {
+  background: var(--dark-cyan);
+}
+
+.card__luxury {
+  background: var(--dark-cyan-2x);
+  border-radius: 0 0 10px 10px;
+}
+
+@media screen and (min-width: 640px) {
+  .card__sedans {
+    border-radius: 10px 0 0 10px;
+  }
+
+  .card__luxury {
+    border-radius: 0 10px 10px 0;
+  }
+}
+
+/* Adjust size of image (as flex item) => Put image inside div  
+https://stackoverflow.com/questions/40448248/adjusting-the-height-of-images-in-flex-layout/40450120#40450120 */
+.card__img-container {
+  flex-basis: 0;
+  height: 2rem;
+}
+
+.card__img {
+  height: 100%;
+}
+
+.card__title {
+  font-family: "Big Shoulders Display", cursive;
+  margin: 0;
+  color: white;
+  font-size: 2rem;
+}
+
+.card__description {
+  color: var(--transparent-white);
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 300;
+  margin: 0;
+}
+
+.card__btn {
+  box-sizing: border-box;
+  background: white;
+  border: 2px solid;
+  border-radius: 20px;
+  padding: 0.8rem 1rem;
+  flex-basis: 0;
+  width: 90%;
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 15px;
+  max-width: 140px;
+}
+
+.card__sedans .card__btn {
+  color: var(--bright-orange);
+}
+
+.card__suvs .card__btn {
+  color: var(--dark-cyan);
+}
+
+.card__luxury .card__btn {
+  color: var(--dark-cyan-2x);
+}
+
+.card__btn:hover {
+  border: 2px solid var(--transparent-white);
+  background: none;
+  cursor: pointer;
+  color: var(--transparent-white);
+}
